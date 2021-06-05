@@ -37,10 +37,9 @@ function nwt7 = nwt7config(ad985x_sel, ad985x_freq, pic16_freq, rs232_port, rs23
       endif;
   endswitch;
 
-  nwt7serialport = serial('/dev/ttyUSB0', baudrate, 10);
+  nwt7serialport = serial(rs232_port, baudrate, 10);
   set(nwt7serialport, 'baudrate', baudrate, 'bytesize', 8, 'parity', 'None', 'stopbits', 1, 'timeout', 10);
   
-  #nwt7 = [nwt7serialport, nwt7ddsfreq];
   nwt7.serialport = nwt7serialport;
   nwt7.ddsfreq = nwt7ddsfreq;
 
