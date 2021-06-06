@@ -37,6 +37,8 @@ function sig = nwt7measure(nwt7, freq, channel, bits)
   srl_write(nwt7.serialport, freqcmd);
   srl_write(nwt7.serialport, measurecmd);
 
+  pause(0.01);
+
   [rs232data, rs232cnt] = srl_read(nwt7.serialport, explen);
 
   if (rs232cnt < explen)
