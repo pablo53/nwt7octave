@@ -7,9 +7,17 @@ in Ubuntu, type the following command from shell:
 
 ```$ sudo apt install octave-instrument-control```
 
+or, alternatively, You can install it directly within Octave:
+
+```octave:1> pkg install -forge -verbose instrument-control```
+
+The above installation process is necessary only once, before You use this library for the first time.
+
 Then, after You start Your session in Octave, load the above library:
 
 ```octave:1> pkg load instrument-control```
+
+The above command, in turn, must be typed whenever You start a new Octave session.
 
 #### Example 1:
 For an NWT7 connected by some USB<->RS232 converter to /dev/ttyUSB0, with a PIC16F876A driven by 10MHz cristal oscillator and an AD9851 driven by 32MHz cristall oscillator, configured by an internal jumper for high speed RS232, we want to generate 1.8 MHz sin wave and check the response with 10-bit resolution in the channel 0 (whether this is an input of a linear detector or a log detector, depends on how this particular NWT7 was assembled; it can be even another type of head in Your NWT7 - e.g. some spectrum analyzer or an antenna analyzer).
